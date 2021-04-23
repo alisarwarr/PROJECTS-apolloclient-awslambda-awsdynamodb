@@ -1,0 +1,19 @@
+type todosType {
+    id: ID!
+    detail: String!
+}
+
+type Query {
+    allTodos: [todosType]
+}
+
+input todosInput {
+    id: ID!
+    detail: String!
+}
+
+type Mutation {
+    createTodo(todosInput: todosInput!): todosType
+    deleteTodo(thatId: ID!): String!
+    updateTodo(todosInput: todosInput!): todosType
+}

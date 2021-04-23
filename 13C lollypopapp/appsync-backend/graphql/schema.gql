@@ -1,0 +1,28 @@
+type lollypopType {
+    id: ID!
+    topColor: String!
+    middleColor: String!
+    bottomColor: String!
+    to: String!
+    message: String!
+    from: String!
+}
+
+type Query {
+    allLollypop: [lollypopType]
+    getLollypopById(pathId: String!): lollypopType
+}
+
+input lollypopInput {
+    id: ID!
+    topColor: String!
+    middleColor: String!
+    bottomColor: String!
+    to: String!
+    message: String!
+    from: String!
+}
+
+type Mutation {
+    addLollypop(lollypopInput: lollypopInput!): lollypopType
+}
